@@ -1,6 +1,6 @@
 cask "auralyrics" do
   version "1.0.3"
-  sha256 "1f1b2a3a8f70c0bd217fb2c905d6ddcdc48f15d86b0c2a14693cf77ab0cb4f45"
+  sha256 "c18c8bbdfa9ad5060e63b9befe10a7fe89184f646d5847b64eb322f9f44be5df"
 
   url "https://github.com/ozcberkay/AuraLyrics/releases/download/v#{version}/AuraLyrics.tar.gz"
   name "AuraLyrics"
