@@ -1,11 +1,13 @@
 cask "auralyrics" do
-  version "1.0.5"
-  sha256 "855dec465d4f0fbe70e15310291cb130971d5fd7b9eb4831c210fb3f318449e7"
+  version "1.1.0"
+  sha256 "2eb8d9f159d2bd6529d941863e4e571b9b9bc81742d2c13f8abea278de769c81"
 
-  url "https://github.com/ozcberkay/AuraLyrics/releases/download/v#{version}/AuraLyrics.tar.gz"
+  url "https://github.com/auraworkshq/AuraLyrics/releases/download/v#{version}/AuraLyrics.tar.gz"
   name "AuraLyrics"
-  desc "Minimalist, Always-on-Top Spotify Lyrics for macOS"
-  homepage "https://github.com/ozcberkay/AuraLyrics"
+  desc "Floating, always-on-top Spotify lyrics for macOS"
+  homepage "https://github.com/auraworkshq/AuraLyrics"
+
+  depends_on macos: ">= :sonoma"
 
   app "AuraLyrics.app"
 
