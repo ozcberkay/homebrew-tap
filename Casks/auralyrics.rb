@@ -7,7 +7,7 @@ cask "auralyrics" do
   desc "Floating, always-on-top Spotify lyrics for macOS"
   homepage "https://github.com/auraworkshq/AuraLyrics"
 
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "AuraLyrics.app"
 
