@@ -4,17 +4,18 @@ cask "auralyrics" do
 
   url "https://github.com/ozcberkay/AuraLyrics/releases/download/v#{version}/AuraLyrics.tar.gz"
   name "AuraLyrics"
-  desc "Floating, always-on-top Spotify lyrics for macOS"
+  desc "Floating, always-on-top synced lyrics for Spotify"
   homepage "https://github.com/ozcberkay/AuraLyrics"
 
   depends_on macos: :sonoma
 
   app "AuraLyrics.app"
 
-  postflight do
-    system_command "xattr",
-                   args: ["-rd", "com.apple.quarantine", "#{appdir}/AuraLyrics.app"],
-                   sudo: false
+  # Releases are signed ad-hoc, not notarized, so Gatekeeper would block the
+  # first launch. Clearing the quarantine flag lets the app open straight away.
+  postflight_steps do
+    run "/usr/bin/xattr",
+        args: ["-dr", "com.apple.quarantine", "{{appdir}}/AuraLyrics.app"]
   end
 
   zap trash: [
