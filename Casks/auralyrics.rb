@@ -15,7 +15,8 @@ cask "auralyrics" do
   # first launch. Clearing the quarantine flag lets the app open straight away.
   postflight_steps do
     run "/usr/bin/xattr",
-        args: ["-dr", "com.apple.quarantine", "{{appdir}}/AuraLyrics.app"]
+        args:         ["-dr", "com.apple.quarantine", "{{appdir}}/AuraLyrics.app"],
+        must_succeed: false
   end
 
   zap trash: [
